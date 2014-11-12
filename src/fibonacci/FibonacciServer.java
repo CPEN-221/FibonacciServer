@@ -74,6 +74,7 @@ public class FibonacciServer {
 			c = b;
 			b = a.add(b);
 			a = c;
+			n--;
 		}
 		return b;
 	}
