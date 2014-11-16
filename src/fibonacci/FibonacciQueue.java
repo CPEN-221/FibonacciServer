@@ -56,7 +56,7 @@ class FibonacciFinder {
 	}
 
 	/**
-	 * Start handling squaring requests.
+	 * Start handling Fibonacci requests.
 	 */
 	public void start() {
 		new Thread(new Runnable() {
