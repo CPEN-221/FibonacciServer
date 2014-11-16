@@ -79,7 +79,7 @@ class FibonacciFinder {
 }
 
 /**
- * A squaring result message.
+ * A Fibonacci result message.
  */
 class FibonacciResult {
 	private final int input;
