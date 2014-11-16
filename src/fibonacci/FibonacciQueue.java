@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Fibonaccis integers.
+ * Fibonaccis numbers.
  */
 class FibonacciFinder {
 
