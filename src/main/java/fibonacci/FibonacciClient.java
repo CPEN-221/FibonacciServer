@@ -34,7 +34,7 @@ public class FibonacciClient {
      */
     public static void main(String[] args) {
         try {
-            FibonacciClient client = new FibonacciClient("35.236.3.212",
+            FibonacciClient client = new FibonacciClient("127.0.0.1",
                     FibonacciServer.FIBONACCI_PORT);
 
             // send the requests to find the first N Fibonacci numbers
