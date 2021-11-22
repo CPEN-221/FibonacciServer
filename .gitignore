@@ -28,3 +28,6 @@ vcs.xml
 # Gradle files that we do not need
 settings.gradle
 /.gradle/
+gradlew.bat
+gradle/wrapper/gradle-wrapper.properties
+gradlew
