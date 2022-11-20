@@ -121,6 +121,11 @@ public class FibonacciServer {
 				}
 				// important! flush our buffer so the reply is sent
 				out.flush();
+				try {
+					Thread.sleep(50);
+				} catch (Exception e){
+					System.err.println("sleep not working");
+				}
 			}
 		} finally {
 			out.close();

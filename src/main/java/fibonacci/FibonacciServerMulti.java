@@ -113,6 +113,11 @@ public class FibonacciServerMulti {
 				// important! our PrintWriter is auto-flushing, but if it were
 				// not:
 				// out.flush();
+				try {
+					Thread.sleep(50);
+				} catch (Exception e){
+					System.err.println("sleep not working");
+				}
 			}
 		} finally {
 			out.close();
