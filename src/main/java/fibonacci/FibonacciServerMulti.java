@@ -15,7 +15,8 @@ import java.net.Socket;
  */
 public class FibonacciServerMulti {
 	/** Default port number where the server listens for connections. */
-	public static final int FIBONACCI_PORT = 4949;
+	public static final int FIBONACCI_PORT = Configs.FIBONACCI_PORT;
+	static int serverPerReqSleepMilliseconds = Configs.serverPerReqSleepMilliseconds;
 
 	private ServerSocket serverSocket;
 
@@ -113,10 +114,12 @@ public class FibonacciServerMulti {
 				// important! our PrintWriter is auto-flushing, but if it were
 				// not:
 				// out.flush();
-				try {
-					Thread.sleep(50);
-				} catch (Exception e){
-					System.err.println("sleep not working");
+				if (serverPerReqSleepMilliseconds>0) {
+					try {
+						Thread.sleep(serverPerReqSleepMilliseconds);
+					} catch (Exception e) {
+						System.err.println("sleep not working");
+					}
 				}
 			}
 		} finally {

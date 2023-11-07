@@ -11,7 +11,7 @@ import java.net.Socket;
  * at which point it is "closed" and may not be used further.
  */
 public class FibonacciClient {
-    private static final int N = 100;
+    private static final int N = Configs.reqCount;
     private Socket socket;
     private BufferedReader in;
     // Rep invariant: socket, in, out != null
@@ -43,11 +43,14 @@ public class FibonacciClient {
                 System.out.println("fibonacci(" + x + ") = ?");
             }
 
+            long start = System.currentTimeMillis();
             // collect the replies
             for (int x = 1; x <= N; ++x) {
                 BigInteger y = client.getReply();
                 System.out.println("fibonacci(" + x + ") = " + y);
             }
+            long end = System.currentTimeMillis();
+            System.out.println("Time elapsed: " + (end - start) + " ms");
 
             client.close();
         }
