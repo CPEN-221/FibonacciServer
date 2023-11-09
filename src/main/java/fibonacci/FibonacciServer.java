@@ -89,7 +89,7 @@ public class FibonacciServer {
 	 *             if connection encounters an error
 	 */
 	private void handle(Socket socket) throws IOException {
-		System.err.println("client connected");
+		System.out.println("client connected");
 
 		// get the socket's input stream, and wrap converters around it
 		// that convert it from a byte stream to a character stream,
@@ -108,16 +108,16 @@ public class FibonacciServer {
 			// each request is a single line containing a number
 			for (String line = in.readLine(); line != null; line = in
 					.readLine()) {
-				System.err.println("request: " + line);
+				System.out.println("request: " + line);
 				try {
 					int x = Integer.valueOf(line);
 					// compute answer and send back to client
 					BigInteger y = fibonacci(x);
-					System.err.println("reply: " + y);
+					System.out.println("reply: " + y);
 					out.print(y + "\n");
 				} catch (NumberFormatException e) {
 					// complain about ill-formatted request
-					System.err.println("reply: err");
+					System.out.println("reply: err");
 					out.println("err");
 				}
 				// important! flush our buffer so the reply is sent
@@ -126,7 +126,7 @@ public class FibonacciServer {
 					try {
 						Thread.sleep(serverPerReqSleepMilliseconds);
 					} catch (Exception e) {
-						System.err.println("sleep not working");
+						System.out.println("sleep not working");
 					}
 				}
 			}
@@ -140,6 +140,7 @@ public class FibonacciServer {
 	 * Start a FibonacciServer running on the default port.
 	 */
 	public static void main(String[] args) {
+		System.out.println("## Server started ##");
 		try {
 			FibonacciServer server = new FibonacciServer(FIBONACCI_PORT);
 			server.serve();

@@ -9,5 +9,5 @@ public class Configs {
     public static final int FIBONACCI_PORT = 4949;
 
     // serverPerReqSleepMilliseconds is the time (in milliseconds) that the server sleeps after processing each request
-    public static int serverPerReqSleepMilliseconds = 10;
+    public static int serverPerReqSleepMilliseconds = 50;
 }
