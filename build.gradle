@@ -2,15 +2,17 @@ plugins {
     id 'java'
 }
 
-group 'CPEN 221'
-version '1.0-SNAPSHOT'
+group = 'CPEN 221'
+version = '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.11
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'junit:junit:4.12'
 }
